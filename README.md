@@ -1,6 +1,6 @@
 # Tumboon-Server
 
-Tumboon sever implementation in Swift
+Tumboon server implementation in Swift
 
 ## Requirement
 (currently support Mac OS X only)
