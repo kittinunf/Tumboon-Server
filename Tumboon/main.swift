@@ -38,6 +38,7 @@ let collection = MemoryCollection<Charity>()
 
 do {
   let server = HttpServer()
+  server["/"] = { requst in return .OK(.Html("Server for Tumboon App")) }
   
   collection.addAll(charities)
   
