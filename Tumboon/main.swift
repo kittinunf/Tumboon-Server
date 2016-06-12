@@ -14,6 +14,7 @@ do {
   
   server.GET["api/charities"] = getCharities()
   server.GET["api/charities/:id"] = getCharitiesById()
+  server.POST["api/charities/:id/donate"] = postCharitiesDonation()
   
   try server.start(8888)
   
