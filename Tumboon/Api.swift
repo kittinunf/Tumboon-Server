@@ -16,27 +16,24 @@ typealias ApiHandler = Swifter.HttpRequest -> Swifter.HttpResponse
 
 func getCharities() -> ApiHandler {
   return { request in
-    return .OK(.Json(charities.map { $0.toDictionary() } ))
+    return .OK(.Json(collection.getAll().sort { $0.id < $1.id }.map { $0.toDictionary() } ))
   }
 }
 
 func getCharitiesById() -> ApiHandler {
   return { request in
     let id = request.params[":id"]!
-    
     guard let idAsInt = Int(id) else { return .BadRequest(.Json(["error" : "id must be integer"])) }
+    guard let charity = collection.get(idAsInt) else { return .BadRequest(.Json(["error" : "id must be integer"])) }
     
-    let filtered = charities.filter { $0.id == idAsInt }
-    if filtered.isEmpty {
-      return .BadRequest(.Json(["error" : "id must be integer"]))
-    }
-    
-    return .OK(.Json(filtered.first!.toDictionary()))
+    return .OK(.Json(charity.toDictionary()))
   }
 }
 
 func postCharitiesDonation() -> ApiHandler {
   return { request in
+    let id = request.params[":id"]!
+    
     let fields = request.parseUrlencodedForm()
     
     let data = fields.reduce([String:String](), combine: { accum, item in
@@ -64,7 +61,16 @@ func postCharitiesDonation() -> ApiHandler {
     
     switch _result {
     case .Success(let data):
-      
+        //update our collection here
+        let amount = data["amount"] as? Double
+        if let amount = amount {
+          let charity = collection.get(Int(id)!)!
+          var _charity = charity
+          _charity.donationAmount += (amount / 100)
+          _charity.donatorCount += 1
+          collection.update(_charity.id, value: _charity)
+        }
+        
         return .OK(.Json(data))
     case .Failure(let error):
         return .BadRequest(.Json(["error" : error]))

@@ -15,6 +15,7 @@
 		3C15BD061D0C694A00854FED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C15BD051D0C694A00854FED /* Alamofire.framework */; };
 		3C15BD071D0C695100854FED /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C15BD051D0C694A00854FED /* Alamofire.framework */; };
 		3C3770FA1D0D5EA1008C15A0 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3770F91D0D5EA1008C15A0 /* Api.swift */; };
+		3C3770FC1D0D741A008C15A0 /* MemoryCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3770FB1D0D741A008C15A0 /* MemoryCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		3C15BD031D0C62E800854FED /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		3C15BD051D0C694A00854FED /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		3C3770F91D0D5EA1008C15A0 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		3C3770FB1D0D741A008C15A0 /* MemoryCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				3C15BCFF1D0C512200854FED /* Model.swift */,
 				3C15BD031D0C62E800854FED /* Util.swift */,
 				3C3770F91D0D5EA1008C15A0 /* Api.swift */,
+				3C3770FB1D0D741A008C15A0 /* MemoryCollection.swift */,
 			);
 			path = Tumboon;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			files = (
 				3C15BCEF1D0A832900854FED /* main.swift in Sources */,
 				3C15BD041D0C62E800854FED /* Util.swift in Sources */,
+				3C3770FC1D0D741A008C15A0 /* MemoryCollection.swift in Sources */,
 				3C3770FA1D0D5EA1008C15A0 /* Api.swift in Sources */,
 				3C15BD001D0C512200854FED /* Model.swift in Sources */,
 			);
