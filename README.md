@@ -14,6 +14,6 @@ Tumboon server implementation in Swift
 * Run xcode with `cmd+r` and selecting tumboon as Target
 * Check whether `http://localhost:8888` is working with browser of your choice and see "Server for Tumboon App" on the screen
 
-## dependencies
+## Dependencies
 * [Swifter](https://github.com/httpswift/swifter) - Basic Server implementation
 * [Alamofire](https://github.com/Alamofire/Alamofire) - Networking
